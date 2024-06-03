@@ -12,10 +12,10 @@
             Console.WriteLine($"Hi, my name is {name}, my favorite color is {color},");
             Console.WriteLine($"my favorite animal is {animal}, and my favorite band is {band}.");
 
-            Console.WriteLine($"The sum of 2 and 3 is {Add(2,3)}");
-            Console.WriteLine($"The difference of 5 and 1 is {Subtract(5,1,1)}");
-            Console.WriteLine($"The product of 6 and 8 is {Multiply(6,8)}");
-            Console.WriteLine($"The quotient of 12 and 3 is {Divide(12,3)}");
+            Console.WriteLine($"2 + 3 = {Add(2,3)}");
+            Console.WriteLine($"5 - 1 - 1 = {Subtract(5,1,1)}");
+            Console.WriteLine($"6 * 8 = {Multiply(6,8)}");
+            Console.WriteLine($"12 / 3 = {Divide(12,3)}");
             Console.WriteLine($"7 % 5 = {Modulus(7,5)}");
         }
 
@@ -27,57 +27,57 @@
             return retVal;
         }
 
-        public static int Add(params int[] nums)
+        public static double Add(params double[] nums)
         {
-            int retVal = nums[1];
-            foreach(int num in nums)
+            double retVal = nums[0];
+            foreach(double num in nums)
             {
                 retVal+=num;
             }
+            retVal-=nums[0];
 
             return retVal;
         }
 
-        public static int Subtract(params int[] nums)
+        public static double Subtract(params double[] nums)
         {
-            int retVal = nums[1];
-            foreach(int num in nums)
+            double retVal = nums[0];
+            foreach(double num in nums)
             {
                 retVal-=num;
             }
+            retVal+=nums[0];
 
             return retVal;
         }
 
-        public static int Multiply(params int[] nums)
+        public static double Multiply(params double[] nums)
         {
-            int retVal = nums[1];
-            foreach(int num in nums)
+            double retVal = nums[0];
+            foreach(double num in nums)
             {
                 retVal*=num;
             }
+            retVal/=nums[0];
 
             return retVal;
         }
 
-        public static int Divide(params int[] nums)
+        public static double Divide(params double[] nums)
         {
-            int retVal = nums[1];
-            foreach(int num in nums)
+            double retVal = nums[0];
+            foreach(double num in nums)
             {
                 retVal/=num;
             }
+            retVal*=nums[0];
 
             return retVal;
         }
 
-        public static int Modulus(params int[] nums)
+        public static double Modulus(double num1, double num2)
         {
-            int retVal = nums[1];
-            foreach(int num in nums)
-            {
-                retVal%=num;
-            }
+            double retVal = num1 % num2;
 
             return retVal;
         }
